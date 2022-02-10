@@ -1,5 +1,5 @@
 {
-  "name": "odata-v4-ng",
+  "name": "@ebenefitsbv/odata-v4-ng",
   "version": "13.0.0",
   "license": "MIT",
   "description": "Client side OData V4 typescript library for Angular",
