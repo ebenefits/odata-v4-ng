@@ -1,5 +1,5 @@
 # Changelog
-## [15.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v13.0.0...v14.0.0) (2022-02-09)
+## [15.0.1](https://github.com/riccardomariani/odata-v4-ng/compare/v14.0.0...v15.0.1) (2022-02-09)
 Update to support Angular 15
 This version was tested with NodeJS 18.14.2 and NPM 9.5.0
 
