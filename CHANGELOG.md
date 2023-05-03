@@ -1,4 +1,12 @@
 # Changelog
+## [15.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v13.0.0...v14.0.0) (2022-02-09)
+Update to support Angular 15
+This version was tested with NodeJS 18.14.2 and NPM 9.5.0
+
+## [14.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v13.0.0...v14.0.0) (2022-02-09)
+Update for Angular 14
+This version was tested with NodeJS 16.x.x and NPM 8.x.x
+
 ## [13.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v1.3.4...v13.0.0) (2022-02-09)
 In version 13 we completely updated all reference npm packages. At the time of the release there were no outdated npm packages and no known security issues in related packages (checked with npm audit).
 
