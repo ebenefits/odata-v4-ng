@@ -177,5 +177,13 @@
       }
     }
   },
-  "defaultProject": "odata-v4-ng-app"
+  "defaultProject": "odata-v4-ng-app",
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
+  }
 }
