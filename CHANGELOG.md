@@ -1,4 +1,11 @@
 # Changelog
+## [17.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v14.0.0...v15.0.1) (2024-05-10)
+Update to support Angular 17
+- Enabled Vite + ESBuild for faster builds
+- Breaking change: HttpClientModule no longer injected automatically, in the location where you import the ODataMdoule you also need to specify the HttpClientModule now. This solves issue #8 by allowing you to specify HTTPInjectors. It is recommended to import ODataModule in the root application module.
+
+This version was tested with NodeJS 18.20.2 and NPM 10.6.0
+
 ## [16.0.1](https://github.com/riccardomariani/odata-v4-ng/compare/v14.0.0...v15.0.1) (2024-05-10)
 Update to support Angular 16
 This version was tested with NodeJS 18.20.2 and NPM 10.6.0

@@ -1,13 +1,9 @@
-import { HttpClientModule } from '@angular/common/http';
-import { ODataService } from './odata-service/odata.service';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {ODataService} from './odata-service/odata.service';
+import {NgModule} from '@angular/core';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ],
+  imports: [],
   providers: [ODataService]
 })
-export class ODataModule { }
+export class ODataModule {
+}

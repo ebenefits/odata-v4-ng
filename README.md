@@ -42,3 +42,4 @@ See [here](https://github.com/ebenefits/odata-v4-ng/blob/master/CHANGELOG.md).
 | 14.x.x          | 14.x.x                                                                   |
 | 15.x.x          | 15.x.x                                                                   |
 | 16.x.x          | 16.x.x                                                                   |
+| 17.x.x          | 17.x.x                                                                   |
