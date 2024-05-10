@@ -2,7 +2,9 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -59,6 +61,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "baseHref": "/odata-v4-ng/",
               "budgets": [
                 {
                   "type": "initial",
@@ -177,7 +180,6 @@
       }
     }
   },
-  "defaultProject": "odata-v4-ng-app",
   "schematics": {
     "@angular-eslint/schematics:application": {
       "setParserOptionsProject": true
