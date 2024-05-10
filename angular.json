@@ -61,6 +61,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "baseHref": "/odata-v4-ng/",
               "budgets": [
                 {
                   "type": "initial",
