@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { UUID } from 'angular2-uuid';
+import { v4 as UUID } from 'uuid';
 import { Observable } from 'rxjs';
 import { ODataResponse } from '../odata-response/odata-response';
 import { HttpOptionsI } from '../odata-service/http-options';
@@ -194,7 +194,7 @@ export class ODataQueryBatch extends ODataQueryAbstract {
   }
 
   getUUID(): string {
-    return UUID.UUID();
+    return UUID();
   }
 
   getRequests(): BatchRequest[] {

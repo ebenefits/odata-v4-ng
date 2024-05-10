@@ -4,6 +4,7 @@ Update to support Angular 17
 - Enabled Vite + ESBuild for faster builds
 - Breaking change: HttpClientModule no longer injected automatically, in the location where you import the ODataMdoule you also need to specify the HttpClientModule now. This solves issue #8 by allowing you to specify HTTPInjectors. It is recommended to import ODataModule in the root application module.
 - Project is now built using standalone project setup
+- Peer dependency update: no longer using `angular2-uuid` package but using `uuid` package instead.
 
 This version was tested with NodeJS 18.20.2 and NPM 10.6.0
 
