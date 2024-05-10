@@ -21,12 +21,15 @@
       "prefix": "ov4",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/odata-v4-ng-app",
+            "outputPath": {
+              "base": "dist/odata-v4-ng-app"
+            },
             "index": "projects/odata-v4-ng-app/src/index.html",
-            "main": "projects/odata-v4-ng-app/src/main.ts",
-            "polyfills": "projects/odata-v4-ng-app/src/polyfills.ts",
+            "polyfills": [
+              "projects/odata-v4-ng-app/src/polyfills.ts"
+            ],
             "tsConfig": "projects/odata-v4-ng-app/tsconfig.app.json",
             "assets": [
               "projects/odata-v4-ng-app/src/favicon.ico",
@@ -39,12 +42,11 @@
               "projects/odata-v4-ng-app/src/styles.less"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "projects/odata-v4-ng-app/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -59,8 +61,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "baseHref": "/odata-v4-ng/",
               "budgets": [
                 {
