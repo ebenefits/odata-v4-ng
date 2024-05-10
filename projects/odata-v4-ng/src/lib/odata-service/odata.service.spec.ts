@@ -1,11 +1,11 @@
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
-import { Observable, of } from 'rxjs';
-import { ODataQuery } from '../odata-query/odata-query';
-import { ODataResponse } from '../odata-response/odata-response';
-import { ODataModule } from '../odata.module';
-import { HttpOptions, HttpOptionsI } from './http-options';
-import { ODataService } from './odata.service';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
+import {TestBed} from '@angular/core/testing';
+import {Observable, of} from 'rxjs';
+import {ODataQuery} from '../odata-query/odata-query';
+import {ODataResponse} from '../odata-response/odata-response';
+import {HttpOptions, HttpOptionsI} from './http-options';
+import {ODataService} from './odata.service';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 
 describe('OdataService', () => {
@@ -79,12 +79,12 @@ describe('OdataService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ODataModule],
+      imports: [HttpClientTestingModule],
       providers: [ODataService]
     });
 
-    odataService = TestBed.get(ODataService);
-    httpClient = TestBed.get(HttpClient);
+    odataService = TestBed.inject(ODataService);
+    httpClient = TestBed.inject(HttpClient);
     odataQuery = new ODataQuery(odataService, SERVICE_ROOT);
   });
 
