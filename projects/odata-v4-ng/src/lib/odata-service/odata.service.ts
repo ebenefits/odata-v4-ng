@@ -12,7 +12,9 @@ import { ODataResponse } from '../odata-response/odata-response';
 import { Utils } from '../utils/utils';
 import { HttpOptions, HttpOptionsI } from './http-options';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ODataService {
   private static readonly IF_MATCH_HEADER = 'If-Match';
 

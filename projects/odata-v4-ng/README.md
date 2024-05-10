@@ -8,23 +8,20 @@ To install the package use `npm install --save @ebenefitsbv/odata-v4-ng`
 
 ## Import
 ```
-import { AppComponent } from './app.component';
-import { ODataModule } from 'odata-v4-ng';
-...
+import { ODataService } from 'odata-v4-ng';
 
-@NgModule({
-  declarations: [
-    AppComponent
-    ...
-  ],
-  imports: [
-    ODataModule
-    ...
-  ],
-  bootstrap: [ AppComponent ]
+@Component({
+    selector: 'example',
+    standalone: true,
 })
-export class AppModule { }
-
+export class BasicWriteComponent extends ExampleComponent implements OnInit {
+  constructor(protected oDataService: ODataService) {
+  }
+  
+  someFunc() {
+    //Use oDataService like in the examples 
+  }
+}
 ```
 
 ## Usage examples
@@ -42,3 +39,4 @@ See [here](https://github.com/ebenefits/odata-v4-ng/blob/master/CHANGELOG.md).
 | 14.x.x          | 14.x.x                                                                   |
 | 15.x.x          | 15.x.x                                                                   |
 | 16.x.x          | 16.x.x                                                                   |
+| 17.x.x          | 17.x.x                                                                   |
