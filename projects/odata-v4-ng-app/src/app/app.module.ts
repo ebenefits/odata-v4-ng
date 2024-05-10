@@ -15,25 +15,23 @@ import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ExampleComponent,
-    BasicReadComponent,
-    BasicWriteComponent,
-    AdvReadComponent,
-    AdvWriteComponent,
-    MetadataComponent,
-    BatchComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ODataModule,
-    TabViewModule,
-    InputTextModule,
-    FormsModule,
-    TabViewModule
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ODataModule,
+        TabViewModule,
+        InputTextModule,
+        FormsModule,
+        TabViewModule,
+        ExampleComponent,
+        BasicReadComponent,
+        BasicWriteComponent,
+        AdvReadComponent,
+        AdvWriteComponent,
+        MetadataComponent,
+        BatchComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
