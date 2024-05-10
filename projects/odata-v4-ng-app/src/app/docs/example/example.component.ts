@@ -1,10 +1,13 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ODataResponse } from 'odata-v4-ng';
 import { ExampleData } from './example-data';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'ov4-example',
-  templateUrl: './example.component.html'
+    selector: 'ov4-example',
+    templateUrl: './example.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class ExampleComponent implements OnDestroy {
   executeEnabled = true;

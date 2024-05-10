@@ -49,5 +49,3 @@ export * from './lib/query-options/orderby';
 export * from './lib/query-options/query-options';
 
 export * from './lib/utils/utils';
-
-export * from './lib/odata.module';

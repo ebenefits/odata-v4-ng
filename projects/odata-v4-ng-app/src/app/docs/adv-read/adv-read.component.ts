@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ODataQuery, ODataService } from 'odata-v4-ng';
 import { BasicReadComponent, EXECUTE_GET } from '../basic-read/basic-read.component';
 import { ExampleData, SERVICE_ROOT } from '../example/example-data';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'ov4-adv-read',
-  templateUrl: '../example/example.component.html'
+    selector: 'ov4-adv-read',
+    templateUrl: '../example/example.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class AdvReadComponent extends BasicReadComponent implements OnInit {
   constructor(protected odataService: ODataService) { super(odataService); }

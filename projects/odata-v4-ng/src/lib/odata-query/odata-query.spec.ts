@@ -5,7 +5,6 @@ import {EntitySet} from '../odata-response/entity-collection';
 import {ODataResponse} from '../odata-response/odata-response';
 import {HttpOptions, HttpOptionsI} from '../odata-service/http-options';
 import {ODataService} from '../odata-service/odata.service';
-import {ODataModule} from '../odata.module';
 import {Expand} from '../query-options/expand';
 import {FilterComparison} from '../query-options/filter/filter-comparison';
 import {FilterContains, FilterEndswith} from '../query-options/filter/filter-function';
@@ -24,10 +23,11 @@ describe('OdataQuery', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ODataModule, HttpClientTestingModule]
+      imports: [HttpClientTestingModule],
+      providers: [ODataService]
     });
 
-    odataService = TestBed.get(ODataService);
+    odataService = TestBed.inject(ODataService);
   });
 
   it('should be created', () => {
@@ -331,7 +331,7 @@ describe('OdataQuery', () => {
   }
 
   it('test toEntitySet', fakeAsync(() => {
-    const httpMock: HttpTestingController = TestBed.get(HttpTestingController);
+    const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
     const responseBody: any = { value: [{ type: 'type1' }, { type: 'type2' }] };
     const responseHeaders: any = { headers: { 'Content-Type': 'application/json' } };
 
@@ -373,7 +373,7 @@ describe('OdataQuery', () => {
   }));
 
   it('test toComplexCollection', fakeAsync(() => {
-    const httpMock: HttpTestingController = TestBed.get(HttpTestingController);
+    const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
     const responseBody: any = { value: [{ type: 'type1' }, { type: 'type2' }] };
     const responseHeaders: any = { headers: { 'Content-Type': 'application/json' } };
 
@@ -413,7 +413,7 @@ describe('OdataQuery', () => {
   }));
 
   it('test toEntity', fakeAsync(() => {
-    const httpMock: HttpTestingController = TestBed.get(HttpTestingController);
+    const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
     const responseBody: any = { type: 'type1' };
     const responseHeaders: any = { headers: { 'Content-Type': 'application/json' } };
 
@@ -449,7 +449,7 @@ describe('OdataQuery', () => {
   }));
 
   it('test toComplexValue', fakeAsync(() => {
-    const httpMock: HttpTestingController = TestBed.get(HttpTestingController);
+    const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
     const responseBody: any = { type: 'type1' };
     const responseHeaders: any = { headers: { 'Content-Type': 'application/json' } };
 
@@ -485,7 +485,7 @@ describe('OdataQuery', () => {
   }));
 
   it('test toPropertyValue', fakeAsync(() => {
-    const httpMock: HttpTestingController = TestBed.get(HttpTestingController);
+    const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
     const responseBody: any = { value: 'type1' };
     const responseHeaders: any = { headers: { 'Content-Type': 'application/json' } };
 
@@ -505,7 +505,7 @@ describe('OdataQuery', () => {
   }));
 
   it('test toCount', fakeAsync(() => {
-    const httpMock: HttpTestingController = TestBed.get(HttpTestingController);
+    const httpMock: HttpTestingController = TestBed.inject(HttpTestingController);
     const responseBody: any = 0;
     const responseHeaders: any = { headers: { 'Content-Type': 'application/json' } };
 

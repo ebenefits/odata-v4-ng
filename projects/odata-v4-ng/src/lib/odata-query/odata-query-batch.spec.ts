@@ -1,10 +1,10 @@
-import { HttpHeaders } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
-import { HttpOptions, HttpOptionsI } from '../odata-service/http-options';
-import { ODataService } from '../odata-service/odata.service';
-import { ODataModule } from '../odata.module';
-import { ODataQuery } from './odata-query';
-import { BatchRequest, Method, ODataQueryBatch } from './odata-query-batch';
+import {HttpHeaders} from '@angular/common/http';
+import {TestBed} from '@angular/core/testing';
+import {HttpOptions, HttpOptionsI} from '../odata-service/http-options';
+import {ODataService} from '../odata-service/odata.service';
+import {ODataQuery} from './odata-query';
+import {BatchRequest, Method, ODataQueryBatch} from './odata-query-batch';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('ODataQueryBatch', () => {
   let odataService: ODataService;
@@ -16,10 +16,11 @@ describe('ODataQueryBatch', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ODataModule]
+      imports: [HttpClientTestingModule],
+      providers: [ODataService]
     });
 
-    odataService = TestBed.get(ODataService);
+    odataService = TestBed.inject(ODataService);
     odataQuery = new ODataQuery(odataService, SERVICE_ROOT);
   });
 

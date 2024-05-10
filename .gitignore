@@ -44,3 +44,6 @@ Thumbs.db
 .scannerwork/
 .ng_pkg_build/
 run-sonar-scanner.sh
+
+# Ignore angular cache
+.nx/cache

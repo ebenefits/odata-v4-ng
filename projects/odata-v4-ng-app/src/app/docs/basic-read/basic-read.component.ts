@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ODataQuery, ODataService } from 'odata-v4-ng';
 import { ExampleData, SERVICE_ROOT } from '../example/example-data';
 import { ExampleComponent } from '../example/example.component';
+import { NgIf, NgFor } from '@angular/common';
 
 export const EXECUTE_GET = `example.odataQuery.get().subscribe(
   (odataResponse: ODataResponse) => {
@@ -13,8 +14,10 @@ export const EXECUTE_GET = `example.odataQuery.get().subscribe(
 );`;
 
 @Component({
-  selector: 'ov4-basic-read',
-  templateUrl: '../example/example.component.html'
+    selector: 'ov4-basic-read',
+    templateUrl: '../example/example.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class BasicReadComponent extends ExampleComponent implements OnInit {
   constructor(protected odataService: ODataService) { super(); }

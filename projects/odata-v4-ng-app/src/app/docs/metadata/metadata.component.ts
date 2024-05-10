@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ODataQuery, ODataResponse, ODataService } from 'odata-v4-ng';
 import { BasicReadComponent, EXECUTE_GET } from '../basic-read/basic-read.component';
 import { ExampleData, SERVICE_ROOT } from '../example/example-data';
+import { NgIf, NgFor } from '@angular/common';
 
 export const EXECUTE_GET_TO_METADATA = `example.odataQuery.get().subscribe(
   (odataResponse: ODataResponse) => {
@@ -13,8 +14,10 @@ export const EXECUTE_GET_TO_METADATA = `example.odataQuery.get().subscribe(
 );`;
 
 @Component({
-  selector: 'ov4-metadata',
-  templateUrl: '../example/example.component.html'
+    selector: 'ov4-metadata',
+    templateUrl: '../example/example.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class MetadataComponent extends BasicReadComponent implements OnInit {
   constructor(protected odataService: ODataService) { super(odataService); }

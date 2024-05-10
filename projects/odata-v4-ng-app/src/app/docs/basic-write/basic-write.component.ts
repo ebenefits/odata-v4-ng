@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ODataQuery, ODataResponse, ODataService } from 'odata-v4-ng';
 import { ExampleData, SERVICE_ROOT } from '../example/example-data';
 import { ExampleComponent } from '../example/example.component';
+import { NgIf, NgFor } from '@angular/common';
 
 const EXECUTE_CREATE_ENTITY = `example.subscr = example.odataQuery.post({
   '@odata.type': 'Microsoft.OData.SampleService.Models.TripPin.Person',
@@ -99,8 +100,10 @@ const EXECUTE_BOUND_ACTION = `example.subscr = example.odataQuery.post({
     );`;
 
 @Component({
-  selector: 'ov4-basic-write',
-  templateUrl: '../example/example.component.html'
+    selector: 'ov4-basic-write',
+    templateUrl: '../example/example.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class BasicWriteComponent extends ExampleComponent implements OnInit {
   constructor(protected odataService: ODataService) {
