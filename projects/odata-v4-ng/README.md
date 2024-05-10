@@ -6,27 +6,6 @@ This project is a client side OData V4 typescript library for Angular. The goal 
 
 To install the package use `npm install --save @ebenefitsbv/odata-v4-ng`
 
-## Import
-```
-import { AppComponent } from './app.component';
-import { ODataModule } from 'odata-v4-ng';
-...
-
-@NgModule({
-  declarations: [
-    AppComponent
-    ...
-  ],
-  imports: [
-    ODataModule
-    ...
-  ],
-  bootstrap: [ AppComponent ]
-})
-export class AppModule { }
-
-```
-
 ## Usage examples
 See [here](https://ebenefits.github.io/odata-v4-ng).
 
