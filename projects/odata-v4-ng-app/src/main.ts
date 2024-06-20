@@ -5,17 +5,18 @@ import {FormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {TabViewModule} from 'primeng/tabview';
 import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
-import {} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {routes} from "./app/routes";
+import {provideHttpClient} from "@angular/common/http";
 
 if (environment.production) {
   enableProdMode();
 }
 
 bootstrapApplication(AppComponent, {
-    providers: [importProvidersFrom(
-      HttpClientModule,
+  providers: [
+    provideHttpClient(),
+    importProvidersFrom(
       BrowserModule,
       RouterModule.forRoot(routes),
       TabViewModule,
