@@ -1,4 +1,4 @@
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import {ODataResponse} from './odata-response';
 
 describe('ODataResponse', () => {

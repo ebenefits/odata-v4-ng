@@ -1,4 +1,4 @@
-import {HttpHeaders, HttpResponse} from '@angular/common/http';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { Utils } from '../utils/utils';
 import { EntitySet } from './entity-collection';

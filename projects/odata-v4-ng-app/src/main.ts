@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {TabViewModule} from 'primeng/tabview';
 import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {routes} from "./app/routes";
 
