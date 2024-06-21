@@ -1,11 +1,11 @@
-import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {TestBed} from '@angular/core/testing';
 import {Observable, of} from 'rxjs';
 import {ODataQuery} from '../odata-query/odata-query';
 import {ODataResponse} from '../odata-response/odata-response';
 import {HttpOptions, HttpOptionsI} from './http-options';
 import {ODataService} from './odata.service';
-import {HttpClientTestingModule} from "@angular/common/http/testing";
+import { provideHttpClientTesting } from "@angular/common/http/testing";
 
 
 describe('OdataService', () => {
@@ -79,9 +79,9 @@ describe('OdataService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [ODataService]
-    });
+    imports: [],
+    providers: [ODataService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
 
     odataService = TestBed.inject(ODataService);
     httpClient = TestBed.inject(HttpClient);
