@@ -1,6 +1,6 @@
 {
   "name": "@ebenefitsbv/odata-v4-ng",
-  "version": "18.0.0",
+  "version": "18.1.0",
   "license": "MIT",
   "description": "Client side OData V4 typescript library for Angular, continuance on the version originally built by Riccardo Mariani",
   "repository": {
@@ -24,9 +24,9 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "uuid": "^9.0.0",
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0",
+    "uuid": "^10.0.0",
+    "@angular/common": "^18.1.0",
+    "@angular/core": "^18.1.0",
     "rxjs": "^7.5.4"
   }
 }
