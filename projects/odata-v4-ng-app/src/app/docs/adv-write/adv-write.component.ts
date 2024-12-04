@@ -16,7 +16,6 @@ const EXECUTE_BATCH = `example.subscr = example.odataQuery.execute().subscribe(
 @Component({
     selector: 'ov4-adv-write',
     templateUrl: '../example/example.component.html',
-    standalone: true,
     imports: [NgIf, NgFor]
 })
 export class AdvWriteComponent extends BasicWriteComponent implements OnInit {

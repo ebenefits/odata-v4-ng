@@ -16,7 +16,6 @@ export const EXECUTE_GET = `example.odataQuery.get().subscribe(
 @Component({
     selector: 'ov4-basic-read',
     templateUrl: '../example/example.component.html',
-    standalone: true,
     imports: [NgIf, NgFor]
 })
 export class BasicReadComponent extends ExampleComponent implements OnInit {

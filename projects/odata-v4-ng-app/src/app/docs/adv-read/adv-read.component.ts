@@ -7,7 +7,6 @@ import { NgIf, NgFor } from '@angular/common';
 @Component({
     selector: 'ov4-adv-read',
     templateUrl: '../example/example.component.html',
-    standalone: true,
     imports: [NgIf, NgFor]
 })
 export class AdvReadComponent extends BasicReadComponent implements OnInit {
