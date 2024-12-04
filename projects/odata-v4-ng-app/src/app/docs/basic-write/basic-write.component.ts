@@ -102,7 +102,6 @@ const EXECUTE_BOUND_ACTION = `example.subscr = example.odataQuery.post({
 @Component({
     selector: 'ov4-basic-write',
     templateUrl: '../example/example.component.html',
-    standalone: true,
     imports: [NgIf, NgFor]
 })
 export class BasicWriteComponent extends ExampleComponent implements OnInit {

@@ -15,10 +15,9 @@ export class BatchItem {
 }
 
 @Component({
-  selector: 'ov4-batch',
-  templateUrl: './batch.component.html',
-  standalone: true,
-  imports: [FormsModule, InputTextModule, NgFor, NgIf, ReactiveFormsModule]
+    selector: 'ov4-batch',
+    templateUrl: './batch.component.html',
+    imports: [FormsModule, InputTextModule, NgFor, NgIf, ReactiveFormsModule]
 })
 export class BatchComponent {
   serviceRootControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});

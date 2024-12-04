@@ -6,7 +6,6 @@ import { NgIf, NgFor } from '@angular/common';
 @Component({
     selector: 'ov4-example',
     templateUrl: './example.component.html',
-    standalone: true,
     imports: [NgIf, NgFor]
 })
 export class ExampleComponent implements OnDestroy {

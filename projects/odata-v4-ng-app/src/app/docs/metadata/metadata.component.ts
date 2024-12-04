@@ -16,7 +16,6 @@ export const EXECUTE_GET_TO_METADATA = `example.odataQuery.get().subscribe(
 @Component({
     selector: 'ov4-metadata',
     templateUrl: '../example/example.component.html',
-    standalone: true,
     imports: [NgIf, NgFor]
 })
 export class MetadataComponent extends BasicReadComponent implements OnInit {

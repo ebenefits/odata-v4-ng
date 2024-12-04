@@ -12,7 +12,6 @@ import { TabViewModule } from 'primeng/tabview';
 @Component({
     selector: 'ov4-root',
     templateUrl: './app.component.html',
-    standalone: true,
     imports: [TabViewModule, BasicReadComponent, BasicWriteComponent, AdvReadComponent, AdvWriteComponent, MetadataComponent, BatchComponent, RouterOutlet]
 })
 export class AppComponent {

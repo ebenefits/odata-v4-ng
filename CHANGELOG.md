@@ -1,9 +1,13 @@
 # Changelog
-## [18.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v17.0.0...v18.0.0) (2024-05-10)
+## [19.0.0](https://github.com/ebenefits/odata-v4-ng/compare/v18.0.0...v19.0.0) (2024-12-04)
+Update to support Angular 19
+This version was tested with NodeJS 22.12.0 and NPM 10.9.1
+
+## [18.0.0](https://github.com/ebenefits/odata-v4-ng/compare/v17.0.0...v18.0.0) (2024-05-10)
 Update to support Angular 18
 This version was tested with NodeJS 18.20.3 and NPM 10.6.0
 
-## [17.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v16.0.1...v17.0.0) (2024-05-10)
+## [17.0.0](https://github.com/ebenefits/odata-v4-ng/compare/v16.0.1...v17.0.0) (2024-05-10)
 Update to support Angular 17
 - Enabled Vite + ESBuild for faster builds
 - Breaking change: HttpClientModule no longer injected automatically, in the location where you import the ODataMdoule you also need to specify the HttpClientModule now. This solves issue #8 by allowing you to specify HTTPInjectors. It is recommended to import ODataModule in the root application module.
@@ -12,19 +16,19 @@ Update to support Angular 17
 
 This version was tested with NodeJS 18.20.2 and NPM 10.6.0
 
-## [16.0.1](https://github.com/riccardomariani/odata-v4-ng/compare/v15.0.1...v16.0.1) (2024-05-10)
+## [16.0.1](https://github.com/ebenefits/odata-v4-ng/compare/v15.0.1...v16.0.1) (2024-05-10)
 Update to support Angular 16
 This version was tested with NodeJS 18.20.2 and NPM 10.6.0
 
-## [15.0.1](https://github.com/riccardomariani/odata-v4-ng/compare/v14.0.0...v15.0.1) (2022-02-09)
+## [15.0.1](https://github.com/ebenefits/odata-v4-ng/compare/v14.0.0...v15.0.1) (2022-02-09)
 Update to support Angular 15
 This version was tested with NodeJS 18.14.2 and NPM 9.5.0
 
-## [14.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v13.0.0...v14.0.0) (2022-02-09)
+## [14.0.0](https://github.com/ebenefits/odata-v4-ng/compare/v13.0.0...v14.0.0) (2022-02-09)
 Update for Angular 14
 This version was tested with NodeJS 16.x.x and NPM 8.x.x
 
-## [13.0.0](https://github.com/riccardomariani/odata-v4-ng/compare/v1.3.4...v13.0.0) (2022-02-09)
+## [13.0.0](https://github.com/ebenefits/odata-v4-ng/compare/v1.3.4...v13.0.0) (2022-02-09)
 In version 13 we completely updated all reference npm packages. At the time of the release there were no outdated npm packages and no known security issues in related packages (checked with npm audit).
 
 Main libraries updated to create version 13:
