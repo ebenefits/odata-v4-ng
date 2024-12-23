@@ -8,6 +8,9 @@ import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from "@angular/router";
 import {routes} from "./app/routes";
 import {provideHttpClient} from "@angular/common/http";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Material from '@primeng/themes/material';
 
 if (environment.production) {
   enableProdMode();
@@ -23,6 +26,13 @@ bootstrapApplication(AppComponent, {
       InputTextModule,
       FormsModule,
       TabViewModule
-    )]
+    ),
+    provideAnimationsAsync(),
+    providePrimeNG({
+      theme: {
+        preset: Material
+      }
+    })
+  ]
 })
   .catch(err => console.error(err));
