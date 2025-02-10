@@ -23,12 +23,14 @@ describe('OdataService', () => {
     'response',
     undefined,
     undefined,
+    undefined,
     'text',
     undefined
   );
   const HTTP_OPTIONS_I_RES_ETAG: HttpOptions = new HttpOptions(
     new HttpHeaders({ header: 'value', etag: 'etag' }),
     'response',
+    undefined,
     undefined,
     undefined,
     'text',
@@ -40,10 +42,12 @@ describe('OdataService', () => {
     undefined,
     undefined,
     undefined,
+    undefined,
     undefined
   );
   const HTTP_OPTIONS_ETAG: HttpOptions = new HttpOptions(
     new HttpHeaders({ etag: 'etag' }),
+    undefined,
     undefined,
     undefined,
     undefined,
