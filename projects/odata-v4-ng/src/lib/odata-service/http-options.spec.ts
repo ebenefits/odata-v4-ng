@@ -35,6 +35,7 @@ describe('HttpOptions', () => {
       new HttpHeaders({ test: 'test' }),
       'response',
       new HttpParams({ fromString: 'test=test' }),
+      undefined,
       true,
       'text',
       true
