@@ -1,10 +1,11 @@
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import {HttpContext, HttpHeaders, HttpParams} from '@angular/common/http';
 
 export interface HttpOptionsI {
     headers?: HttpHeaders;
     params?: HttpParams;
     reportProgress?: boolean;
     withCredentials?: boolean;
+    context?: HttpContext;
 }
 
 export class HttpOptions implements HttpOptionsI {
@@ -12,8 +13,9 @@ export class HttpOptions implements HttpOptionsI {
         public headers?: HttpHeaders,
         public observe: 'response' = 'response',
         public params?: HttpParams,
+        public context?: HttpContext,
         public reportProgress?: boolean,
         public responseType: 'text' = 'text',
-        public withCredentials?: boolean
+        public withCredentials?: boolean,
     ) { }
 }
