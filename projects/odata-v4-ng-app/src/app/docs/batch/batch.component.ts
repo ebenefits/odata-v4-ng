@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ODataQuery, ODataQueryBatch, ODataResponse, ODataService} from 'odata-v4-ng';
 import {Observable} from 'rxjs';
-import {NgFor, NgIf} from '@angular/common';
+
 import {InputTextModule} from 'primeng/inputtext';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -17,7 +17,7 @@ export class BatchItem {
 @Component({
     selector: 'ov4-batch',
     templateUrl: './batch.component.html',
-    imports: [FormsModule, InputTextModule, NgFor, NgIf, ReactiveFormsModule]
+    imports: [FormsModule, InputTextModule, ReactiveFormsModule]
 })
 export class BatchComponent {
   serviceRootControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
