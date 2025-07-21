@@ -7,12 +7,12 @@ import { AdvWriteComponent } from './docs/adv-write/adv-write.component';
 import { AdvReadComponent } from './docs/adv-read/adv-read.component';
 import { BasicWriteComponent } from './docs/basic-write/basic-write.component';
 import { BasicReadComponent } from './docs/basic-read/basic-read.component';
-import { TabViewModule } from 'primeng/tabview';
+import { TabsModule } from 'primeng/tabs';
 
 @Component({
     selector: 'ov4-root',
     templateUrl: './app.component.html',
-    imports: [TabViewModule, BasicReadComponent, BasicWriteComponent, AdvReadComponent, AdvWriteComponent, MetadataComponent, BatchComponent, RouterOutlet]
+    imports: [TabsModule, BasicReadComponent, BasicWriteComponent, AdvReadComponent, AdvWriteComponent, MetadataComponent, BatchComponent, RouterOutlet]
 })
 export class AppComponent {
   title = 'odata-v4-ng';

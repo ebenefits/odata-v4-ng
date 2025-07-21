@@ -26,25 +26,35 @@
   on workload.</p>
 <p>Any feedback is highly appreciated and please report issues! Thanks so much!</p>
 
-<p-tabView>
-  <p-tabPanel header="Basic Read">
-    <ov4-basic-read></ov4-basic-read>
-  </p-tabPanel>
-  <p-tabPanel header="Basic Write">
-    <ov4-basic-write></ov4-basic-write>
-  </p-tabPanel>
-  <p-tabPanel header="Advanced Read">
-    <ov4-adv-read></ov4-adv-read>
-  </p-tabPanel>
-  <p-tabPanel header="Advanced Write">
-    <ov4-adv-write></ov4-adv-write>
-  </p-tabPanel>
-  <p-tabPanel header="Service Document and Metadata">
-    <ov4-metadata></ov4-metadata>
-  </p-tabPanel>
-  <p-tabPanel header="Batch">
-    <ov4-batch></ov4-batch>
-  </p-tabPanel>
-</p-tabView>
+<p-tabs value="0">
+  <p-tablist>
+    <p-tab value="0">Basic Read</p-tab>
+    <p-tab value="1">Basic Write</p-tab>
+    <p-tab value="2">Advanced Read</p-tab>
+    <p-tab value="3">Advanced Write</p-tab>
+    <p-tab value="4">Service Document and Metadata</p-tab>
+    <p-tab value="5">Batch</p-tab>
+  </p-tablist>
+  <p-tabpanels>
+    <p-tabpanel value="0">
+      <ov4-basic-read></ov4-basic-read>
+    </p-tabpanel>
+    <p-tabpanel value="1">
+      <ov4-basic-write></ov4-basic-write>
+    </p-tabpanel>
+    <p-tabpanel value="2">
+      <ov4-adv-read></ov4-adv-read>
+    </p-tabpanel>
+    <p-tabpanel value="3">
+      <ov4-adv-write></ov4-adv-write>
+    </p-tabpanel>
+    <p-tabpanel value="4">
+      <ov4-metadata></ov4-metadata>
+    </p-tabpanel>
+    <p-tabpanel value="5">
+      <ov4-batch></ov4-batch>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>
 
 <router-outlet></router-outlet>

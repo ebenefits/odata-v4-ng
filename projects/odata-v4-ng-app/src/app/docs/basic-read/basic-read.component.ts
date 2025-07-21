@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ODataQuery, ODataService } from 'odata-v4-ng';
-import { ExampleData, SERVICE_ROOT } from '../example/example-data';
-import { ExampleComponent } from '../example/example.component';
-import { NgIf, NgFor } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+import {ODataQuery, ODataService} from 'odata-v4-ng';
+import {ExampleData, SERVICE_ROOT} from '../example/example-data';
+import {ExampleComponent} from '../example/example.component';
 
 export const EXECUTE_GET = `example.odataQuery.get().subscribe(
   (odataResponse: ODataResponse) => {
@@ -16,10 +15,15 @@ export const EXECUTE_GET = `example.odataQuery.get().subscribe(
 @Component({
     selector: 'ov4-basic-read',
     templateUrl: '../example/example.component.html',
-    imports: [NgIf, NgFor]
+    imports: []
 })
 export class BasicReadComponent extends ExampleComponent implements OnInit {
-  constructor(protected odataService: ODataService) { super(); }
+  protected odataService = inject(ODataService);
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() { super(); }
 
   ngOnInit() {
     this.examples = [];

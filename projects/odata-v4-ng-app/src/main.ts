@@ -3,7 +3,7 @@ import {environment} from './environments/environment';
 import {AppComponent} from './app/app.component';
 import {FormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
-import {TabViewModule} from 'primeng/tabview';
+import {TabsModule} from 'primeng/tabs';
 import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from "@angular/router";
 import {routes} from "./app/routes";
@@ -22,10 +22,9 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(
       BrowserModule,
       RouterModule.forRoot(routes),
-      TabViewModule,
       InputTextModule,
       FormsModule,
-      TabViewModule
+      TabsModule
     ),
     provideAnimationsAsync(),
     providePrimeNG({

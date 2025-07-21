@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {ODataQuery, ODataQueryBatch, ODataResponse, ODataService} from 'odata-v4-ng';
 import {Observable} from 'rxjs';
 
@@ -20,6 +20,8 @@ export class BatchItem {
     imports: [FormsModule, InputTextModule, ReactiveFormsModule]
 })
 export class BatchComponent {
+  private odataService = inject(ODataService);
+
   serviceRootControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entitySetControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entityIdControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
@@ -27,7 +29,10 @@ export class BatchComponent {
   entityPropertyPutControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   batchData: BatchItem[] = [];
 
-  constructor(private odataService: ODataService) {
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {
   }
 
   executeAllQueries(): void {
