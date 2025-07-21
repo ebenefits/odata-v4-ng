@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {ODataQuery, ODataQueryBatch, ODataResponse, ODataService} from 'odata-v4-ng';
 import {Observable} from 'rxjs';
-import {NgFor, NgIf} from '@angular/common';
+
 import {InputTextModule} from 'primeng/inputtext';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -17,18 +17,17 @@ export class BatchItem {
 @Component({
     selector: 'ov4-batch',
     templateUrl: './batch.component.html',
-    imports: [FormsModule, InputTextModule, NgFor, NgIf, ReactiveFormsModule]
+    imports: [FormsModule, InputTextModule, ReactiveFormsModule]
 })
 export class BatchComponent {
+  private odataService = inject(ODataService);
+
   serviceRootControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entitySetControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entityIdControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entityPropertyPatchControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entityPropertyPutControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   batchData: BatchItem[] = [];
-
-  constructor(private odataService: ODataService) {
-  }
 
   executeAllQueries(): void {
     const batchData: BatchItem[] = [];

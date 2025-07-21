@@ -3,14 +3,14 @@ import {environment} from './environments/environment';
 import {AppComponent} from './app/app.component';
 import {FormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
-import {TabViewModule} from 'primeng/tabview';
+import {TabsModule} from 'primeng/tabs';
 import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from "@angular/router";
 import {routes} from "./app/routes";
 import {provideHttpClient} from "@angular/common/http";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
-import Material from '@primeng/themes/material';
+import Material from '@primeuix/themes/material';
 
 if (environment.production) {
   enableProdMode();
@@ -22,15 +22,19 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(
       BrowserModule,
       RouterModule.forRoot(routes),
-      TabViewModule,
       InputTextModule,
       FormsModule,
-      TabViewModule
+      TabsModule
     ),
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: Material
+        preset: Material,
+        options: {
+          prefix: 'p',
+          darkModeSelector: 'system',
+          cssLayer: false
+        }
       }
     })
   ]

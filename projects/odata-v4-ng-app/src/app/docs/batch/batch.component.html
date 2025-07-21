@@ -20,9 +20,15 @@
 </span>
 <br/>
 <input type="button" value="Execute all queries" (click)="executeAllQueries()">
-<div *ngFor="let batchItem of batchData">
-  <h4>{{batchItem.requestDescription}} Batch Response</h4>
-  <textarea class="response" readonly="true">{{batchItem.responseBatch.toString()}}</textarea>
-  <h4 *ngIf="batchItem.responses.length">{{batchItem.requestDescription}} Batch Response Parts</h4>
-  <textarea *ngFor="let response of batchItem.responses" class="response" readonly="true">{{response?.toString()}}</textarea>
-</div>
+@for (batchItem of batchData; track batchItem) {
+  <div>
+    <h4>{{batchItem.requestDescription}} Batch Response</h4>
+    <textarea class="response" readonly="true">{{batchItem.responseBatch.toString()}}</textarea>
+    @if (batchItem.responses.length) {
+      <h4>{{batchItem.requestDescription}} Batch Response Parts</h4>
+    }
+    @for (response of batchItem.responses; track response) {
+      <textarea class="response" readonly="true">{{response?.toString()}}</textarea>
+    }
+  </div>
+}

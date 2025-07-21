@@ -3,7 +3,7 @@ import {map} from 'rxjs/operators';
 
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ODataQuery } from '../odata-query/odata-query';
@@ -16,9 +16,9 @@ import { HttpOptions, HttpOptionsI } from './http-options';
   providedIn: 'root'
 })
 export class ODataService {
-  private static readonly IF_MATCH_HEADER = 'If-Match';
+  private http = inject(HttpClient);
 
-  constructor(private http: HttpClient) { }
+  private static readonly IF_MATCH_HEADER = 'If-Match';
 
   get(odataQuery: ODataQuery, httpOptions?: HttpOptionsI): Observable<ODataResponse> {
     const url: string = odataQuery.toString();
