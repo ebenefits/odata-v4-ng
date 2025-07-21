@@ -10,7 +10,7 @@ import {routes} from "./app/routes";
 import {provideHttpClient} from "@angular/common/http";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
-import Material from '@primeng/themes/material';
+import Material from '@primeuix/themes/material';
 
 if (environment.production) {
   enableProdMode();
@@ -29,7 +29,12 @@ bootstrapApplication(AppComponent, {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: Material
+        preset: Material,
+        options: {
+          prefix: 'p',
+          darkModeSelector: 'system',
+          cssLayer: false
+        }
       }
     })
   ]

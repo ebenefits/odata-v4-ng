@@ -28,7 +28,7 @@
     "e2e": "ng e2e",
     "tag-package-version": "npm version 20.0.0 --allow-same-version --git-tag-version && node scripts/align-package-version-number.js",
     "buildLib": "ncp README.md projects/odata-v4-ng/README.md && ng lint odata-v4-ng && ng test odata-v4-ng && ng build odata-v4-ng --configuration=production",
-    "buildApp": "ng lint odata-v4-ng-app && ng test odata-v4-ng-app && ng build odata-v4-ng-app --configuration=production && rimraf docs && move-cli dist/odata-v4-ng-app docs",
+    "buildApp": "ng lint odata-v4-ng-app && ng test odata-v4-ng-app && ng build odata-v4-ng-app --configuration=production && rimraf docs && ncp dist/odata-v4-ng-app docs && rimraf dist/odata-v4-ng-app",
     "buildAll": "npm run buildLib && npm run buildApp",
     "publish": "npm run tag-package-version && npm run buildLib && cd dist/odata-v4-ng && npm publish --access public && cd ../../"
   },
@@ -45,6 +45,7 @@
     "@angular/router": "^20.1.2",
     "@fullcalendar/core": "^6.1.18",
     "@primeng/themes": "^20.0.0",
+    "@primeuix/themes": "^1.2.1",
     "primeicons": "^7.0.0",
     "primeng": "^20.0.0",
     "rxjs": "^7.8.2",
