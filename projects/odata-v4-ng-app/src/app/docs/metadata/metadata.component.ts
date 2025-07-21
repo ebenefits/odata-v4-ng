@@ -20,13 +20,10 @@ export const EXECUTE_GET_TO_METADATA = `example.odataQuery.get().subscribe(
 export class MetadataComponent extends BasicReadComponent implements OnInit {
   protected odataService: ODataService;
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {
- const odataService = inject(ODataService);
- super(odataService); 
- this.odataService = odataService;
+     const odataService = inject(ODataService);
+     super(odataService);
+     this.odataService = odataService;
   }
 
   ngOnInit() {

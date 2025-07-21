@@ -20,11 +20,6 @@ export const EXECUTE_GET = `example.odataQuery.get().subscribe(
 export class BasicReadComponent extends ExampleComponent implements OnInit {
   protected odataService = inject(ODataService);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
-  constructor() { super(); }
-
   ngOnInit() {
     this.examples = [];
     // ENTITY SET

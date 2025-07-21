@@ -9,16 +9,7 @@ import {ExampleData, SERVICE_ROOT} from '../example/example-data';
     imports: []
 })
 export class AdvReadComponent extends BasicReadComponent implements OnInit {
-  protected odataService: ODataService;
-
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
-  constructor() {
- const odataService = inject(ODataService);
- super(odataService); 
- this.odataService = odataService;
-  }
+  protected odataService: ODataService = inject(ODataService);
 
   ngOnInit() {
     this.examples = [];

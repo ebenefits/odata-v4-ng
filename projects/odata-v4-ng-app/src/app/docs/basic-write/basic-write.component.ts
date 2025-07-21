@@ -106,9 +106,6 @@ const EXECUTE_BOUND_ACTION = `example.subscr = example.odataQuery.post({
 export class BasicWriteComponent extends ExampleComponent implements OnInit {
   protected odataService = inject(ODataService);
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {
     super();
     this.executeEnabled = false;

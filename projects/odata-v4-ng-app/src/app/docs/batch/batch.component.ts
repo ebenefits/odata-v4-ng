@@ -29,12 +29,6 @@ export class BatchComponent {
   entityPropertyPutControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   batchData: BatchItem[] = [];
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
-  constructor() {
-  }
-
   executeAllQueries(): void {
     const batchData: BatchItem[] = [];
 

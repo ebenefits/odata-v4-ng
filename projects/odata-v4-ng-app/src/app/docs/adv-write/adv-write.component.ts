@@ -18,19 +18,7 @@ const EXECUTE_BATCH = `example.subscr = example.odataQuery.execute().subscribe(
     imports: []
 })
 export class AdvWriteComponent extends BasicWriteComponent implements OnInit {
-  protected odataService: ODataService;
-
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
-  constructor() {
-    const odataService = inject(ODataService);
-
-    super(odataService);
-    this.odataService = odataService;
-
-    this.executeEnabled = false;
-  }
+  protected odataService: ODataService = inject(ODataService);
 
   ngOnInit() {
     this.examples = [];
