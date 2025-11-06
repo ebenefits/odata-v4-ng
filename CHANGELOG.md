@@ -1,4 +1,11 @@
 # Changelog
+## [20.3.0](https://github.com/ebenefits/odata-v4-ng/compare/v20.0.0...v20.3.0) (2025-11-05)
+Update to support Angular 20.3
+Updated outdated (peer) depedencies
+
+## [20.0.0](https://github.com/ebenefits/odata-v4-ng/compare/v19.0.0...v20.0.0) (2025-07-21)
+Update to support Angular 20
+
 ## [19.0.0](https://github.com/ebenefits/odata-v4-ng/compare/v18.0.0...v19.0.1) (2024-12-04)
 Update to support Angular 19
 This version was tested with NodeJS 22.12.0 and NPM 10.9.1
