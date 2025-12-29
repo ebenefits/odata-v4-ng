@@ -24,3 +24,4 @@ See [here](https://github.com/ebenefits/odata-v4-ng/blob/master/CHANGELOG.md).
 | 17.x.x          | 17.x.x                                                                   |
 | 18.x.x          | 18.x.x                                                                   |
 | 19.x.x          | 19.x.x                                                                   |
+| 20.x.x          | 20.x.x                                                                   |
