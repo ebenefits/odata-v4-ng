@@ -8,7 +8,6 @@
 > 0.5%
 last 2 versions
 Firefox ESR
-not dead
 
 # exclude all es5 browsers; we don't support them anymore
 not IE 9-11
@@ -25,4 +24,7 @@ not last 2 and_uc versions
 not last 2 and_qq versions
 not last 2 samsung versions
 not last 2 opera versions
-not android 143
+not last 1 android versions
+
+# exclude browsers that are considered dead
+not dead
