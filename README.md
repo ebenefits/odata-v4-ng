@@ -32,5 +32,5 @@ See [here](https://github.com/ebenefits/odata-v4-ng/blob/master/CHANGELOG.md).
 | 18.x.x          | 18.x.x                                                                   |
 | 19.x.x          | 19.x.x                                                                   |
 | 20.x.x          | 20.x.x                                                                   |
-| 21.x.x          | Coming soon                                                              |
+| 21.x.x          | 21.x.x                                                                   |
 | 22.x.x          | Coming soon                                                              |
