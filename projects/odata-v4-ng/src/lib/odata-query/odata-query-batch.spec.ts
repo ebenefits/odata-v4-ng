@@ -1,4 +1,4 @@
-import { HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpHeaders, provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import {TestBed} from '@angular/core/testing';
 import {HttpOptions, HttpOptionsI} from '../odata-service/http-options';
 import {ODataService} from '../odata-service/odata.service';
@@ -17,7 +17,7 @@ describe('ODataQueryBatch', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
     imports: [],
-    providers: [ODataService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    providers: [ODataService, provideHttpClient(withXhr(), withInterceptorsFromDi()), provideHttpClientTesting()]
 });
 
     odataService = TestBed.inject(ODataService);

@@ -26,35 +26,42 @@
   on workload.</p>
 <p>Any feedback is highly appreciated and please report issues! Thanks so much!</p>
 
-<p-tabs value="0">
-  <p-tablist>
-    <p-tab value="0">Basic Read</p-tab>
-    <p-tab value="1">Basic Write</p-tab>
-    <p-tab value="2">Advanced Read</p-tab>
-    <p-tab value="3">Advanced Write</p-tab>
-    <p-tab value="4">Service Document and Metadata</p-tab>
-    <p-tab value="5">Batch</p-tab>
-  </p-tablist>
-  <p-tabpanels>
-    <p-tabpanel value="0">
+<div class="tab-list" role="tablist">
+  @for (tab of tabs; track tab; let i = $index) {
+    <button type="button"
+            role="tab"
+            class="tab"
+            [id]="'tab-' + i"
+            [class.active]="selectedTab === i"
+            [attr.aria-selected]="selectedTab === i"
+            [attr.aria-controls]="'tabpanel-' + i"
+            (click)="selectedTab = i">{{tab}}</button>
+  }
+</div>
+<div class="tab-panel"
+     role="tabpanel"
+     [id]="'tabpanel-' + selectedTab"
+     [attr.aria-labelledby]="'tab-' + selectedTab">
+  @switch (selectedTab) {
+    @case (0) {
       <ov4-basic-read></ov4-basic-read>
-    </p-tabpanel>
-    <p-tabpanel value="1">
+    }
+    @case (1) {
       <ov4-basic-write></ov4-basic-write>
-    </p-tabpanel>
-    <p-tabpanel value="2">
+    }
+    @case (2) {
       <ov4-adv-read></ov4-adv-read>
-    </p-tabpanel>
-    <p-tabpanel value="3">
+    }
+    @case (3) {
       <ov4-adv-write></ov4-adv-write>
-    </p-tabpanel>
-    <p-tabpanel value="4">
+    }
+    @case (4) {
       <ov4-metadata></ov4-metadata>
-    </p-tabpanel>
-    <p-tabpanel value="5">
+    }
+    @case (5) {
       <ov4-batch></ov4-batch>
-    </p-tabpanel>
-  </p-tabpanels>
-</p-tabs>
+    }
+  }
+</div>
 
 <router-outlet></router-outlet>

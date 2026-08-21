@@ -1,16 +1,10 @@
 import {enableProdMode, importProvidersFrom, provideZoneChangeDetection} from '@angular/core';
 import {environment} from './environments/environment';
 import {AppComponent} from './app/app.component';
-import {FormsModule} from '@angular/forms';
-import {InputTextModule} from 'primeng/inputtext';
-import {TabsModule} from 'primeng/tabs';
 import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from "@angular/router";
 import {routes} from "./app/routes";
-import {provideHttpClient} from "@angular/common/http";
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { providePrimeNG } from 'primeng/config';
-import Material from '@primeuix/themes/material';
+import {provideHttpClient, withXhr} from "@angular/common/http";
 
 if (environment.production) {
   enableProdMode();
@@ -19,25 +13,11 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     provideZoneChangeDetection(),
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
     importProvidersFrom(
       BrowserModule,
-      RouterModule.forRoot(routes),
-      InputTextModule,
-      FormsModule,
-      TabsModule
-    ),
-    provideAnimationsAsync(),
-    providePrimeNG({
-      theme: {
-        preset: Material,
-        options: {
-          prefix: 'p',
-          darkModeSelector: 'system',
-          cssLayer: false
-        }
-      }
-    })
+      RouterModule.forRoot(routes)
+    )
   ]
 })
   .catch(err => console.error(err));

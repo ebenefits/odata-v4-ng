@@ -1,9 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import {ODataQuery, ODataQueryBatch, ODataResponse, ODataService} from 'odata-v4-ng';
 import {Observable} from 'rxjs';
 
-import {InputTextModule} from 'primeng/inputtext';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 
 export class BatchItem {
   constructor(
@@ -17,7 +16,8 @@ export class BatchItem {
 @Component({
     selector: 'ov4-batch',
     templateUrl: './batch.component.html',
-    imports: [FormsModule, InputTextModule, ReactiveFormsModule]
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [ReactiveFormsModule]
 })
 export class BatchComponent {
   private odataService = inject(ODataService);

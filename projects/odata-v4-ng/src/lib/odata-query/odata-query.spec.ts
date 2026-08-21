@@ -1,4 +1,4 @@
-import { HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpHeaders, provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
 import {fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {EntitySet} from '../odata-response/entity-collection';
@@ -24,7 +24,7 @@ describe('OdataQuery', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
     imports: [],
-    providers: [ODataService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    providers: [ODataService, provideHttpClient(withXhr(), withInterceptorsFromDi()), provideHttpClientTesting()]
 });
 
     odataService = TestBed.inject(ODataService);

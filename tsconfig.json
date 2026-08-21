@@ -1,9 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "strict": false,
     "esModuleInterop": true,
     "declaration": false,
     "experimentalDecorators": true,
@@ -13,8 +13,8 @@
     "target": "ES2022",
     "paths": {
       "odata-v4-ng": [
-        "dist/odata-v4-ng/odata-v4-ng",
-        "dist/odata-v4-ng"
+        "./dist/odata-v4-ng/odata-v4-ng",
+        "./dist/odata-v4-ng"
       ]
     },
     "useDefineForClassFields": false

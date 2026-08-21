@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import {ODataQuery, ODataResponse, ODataService} from 'odata-v4-ng';
 import {ExampleData, SERVICE_ROOT} from '../example/example-data';
 import {ExampleComponent} from '../example/example.component';
@@ -101,6 +101,7 @@ const EXECUTE_BOUND_ACTION = `example.subscr = example.odataQuery.post({
 @Component({
     selector: 'ov4-basic-write',
     templateUrl: '../example/example.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class BasicWriteComponent extends ExampleComponent implements OnInit {

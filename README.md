@@ -33,4 +33,5 @@ See [here](https://github.com/ebenefits/odata-v4-ng/blob/master/CHANGELOG.md).
 | 19.x.x          | 19.x.x                                                                   |
 | 20.x.x          | 20.x.x                                                                   |
 | 21.x.x          | 21.x.x                                                                   |
-| 22.x.x          | Coming soon                                                              |
+| 22.x.x          | 22.x.x                                                                   |
+| newer           | not supported - package no longer maintained                             |

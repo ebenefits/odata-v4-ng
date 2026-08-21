@@ -6,6 +6,37 @@
   width: 100%;
   height: 200px;
 }
-.ui-float-label {
+
+/* Minimal tab strip, replacing PrimeNG's Tabs component */
+.tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 16px;
+}
+.tab {
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+.tab:hover {
+  background: #f0f0f0;
+}
+.tab.active {
+  border-color: #ccc;
+  background: #fff;
+  font-weight: bold;
+  margin-bottom: -1px;
+}
+
+/* Labelled input, replacing PrimeNG's float label wrapper */
+.field {
   margin-bottom: 20px;
+}
+.field label {
+  display: block;
+  margin-bottom: 4px;
 }

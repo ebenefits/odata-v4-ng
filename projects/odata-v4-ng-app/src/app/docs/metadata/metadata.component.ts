@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import {ODataQuery, ODataResponse, ODataService} from 'odata-v4-ng';
 import {BasicReadComponent, EXECUTE_GET} from '../basic-read/basic-read.component';
 import {ExampleData, SERVICE_ROOT} from '../example/example-data';
@@ -15,6 +15,7 @@ export const EXECUTE_GET_TO_METADATA = `example.odataQuery.get().subscribe(
 @Component({
     selector: 'ov4-metadata',
     templateUrl: '../example/example.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class MetadataComponent extends BasicReadComponent implements OnInit {
