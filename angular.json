@@ -112,18 +112,6 @@
             "codeCoverage": true
           }
         },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/odata-v4-ng-app/e2e/protractor.conf.js",
-            "devServerTarget": "odata-v4-ng-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "odata-v4-ng-app:serve:production"
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {

@@ -12,8 +12,7 @@
       "parserOptions": {
         "project": [
           "projects/odata-v4-ng-app/tsconfig.app.json",
-          "projects/odata-v4-ng-app/tsconfig.spec.json",
-          "projects/odata-v4-ng-app/e2e/tsconfig.json"
+          "projects/odata-v4-ng-app/tsconfig.spec.json"
         ],
         "createDefaultProgram": true
       },
