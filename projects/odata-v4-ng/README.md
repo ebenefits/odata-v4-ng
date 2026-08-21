@@ -1,3 +1,10 @@
+# Deprecation notice
+This project is no longer in development and it's only compatible with angular versions <= 22.
+
+We will phase out the usage of oData in our company projects, and will therefore stop maintaining this package once we achieve that goal. 
+
+_______________________________________________________
+
 # odata-v4-ng
 
 This project is a client side OData V4 typescript library for Angular. The goal is to create an easy to understand [fluent API](https://www.google.it/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjztKLavNTVAhXDKlAKHbNEA2IQFgg2MAI&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFluent_interface&usg=AFQjCNHcT-89__Mu2BHtejtaB-dxbg7VNw) for querying, creating, updating and deleting OData resources in modern version of Angular.
@@ -25,3 +32,5 @@ See [here](https://github.com/ebenefits/odata-v4-ng/blob/master/CHANGELOG.md).
 | 18.x.x          | 18.x.x                                                                   |
 | 19.x.x          | 19.x.x                                                                   |
 | 20.x.x          | 20.x.x                                                                   |
+| 21.x.x          | Coming soon                                                              |
+| 22.x.x          | Coming soon                                                              |
