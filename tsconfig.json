@@ -11,10 +11,6 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
     "paths": {
       "odata-v4-ng": [
         "dist/odata-v4-ng/odata-v4-ng",
