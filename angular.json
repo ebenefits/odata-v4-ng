@@ -13,7 +13,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "css"
         }
       },
       "root": "projects/odata-v4-ng-app",
@@ -33,7 +33,7 @@
               "projects/odata-v4-ng-app/src/assets"
             ],
             "styles": [
-              "projects/odata-v4-ng-app/src/styles.less"
+              "projects/odata-v4-ng-app/src/styles.css"
             ],
             "scripts": [],
             "extractLicenses": false,
