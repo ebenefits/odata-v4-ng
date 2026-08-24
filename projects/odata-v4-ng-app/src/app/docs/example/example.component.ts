@@ -1,4 +1,4 @@
-import { Component, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ODataResponse } from 'odata-v4-ng';
 import { ExampleData } from './example-data';
 
@@ -6,7 +6,6 @@ import { ExampleData } from './example-data';
 @Component({
     selector: 'ov4-example',
     templateUrl: './example.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class ExampleComponent implements OnDestroy {
@@ -32,10 +31,10 @@ export class ExampleComponent implements OnDestroy {
   executeGet(example: ExampleData): void {
     example.subscr = example.odataQuery.get().subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }

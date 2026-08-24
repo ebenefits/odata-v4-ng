@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SERVICE_ROOT } from './docs/example/example-data';
 import { RouterOutlet } from '@angular/router';
 import { BatchComponent } from './docs/batch/batch.component';
@@ -11,7 +11,6 @@ import { BasicReadComponent } from './docs/basic-read/basic-read.component';
 @Component({
     selector: 'ov4-root',
     templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [BasicReadComponent, BasicWriteComponent, AdvReadComponent, AdvWriteComponent, MetadataComponent, BatchComponent, RouterOutlet]
 })
 export class AppComponent {
@@ -26,5 +25,5 @@ export class AppComponent {
     'Service Document and Metadata',
     'Batch'
   ];
-  selectedTab = 0;
+  readonly selectedTab = signal(0);
 }

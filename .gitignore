@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/docs
 /tmp
 /out-tsc
 
@@ -28,8 +29,7 @@
 /.angular/cache
 /.sass-cache
 /connect.lock
-/projects/odata-v4-ng/coverage
-/projects/odata-v4-ng-app/coverage
+/coverage
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log

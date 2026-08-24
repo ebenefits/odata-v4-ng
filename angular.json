@@ -27,9 +27,6 @@
               "base": "dist/odata-v4-ng-app"
             },
             "index": "projects/odata-v4-ng-app/src/index.html",
-            "polyfills": [
-              "projects/odata-v4-ng-app/src/polyfills.ts"
-            ],
             "tsConfig": "projects/odata-v4-ng-app/tsconfig.app.json",
             "assets": [
               "projects/odata-v4-ng-app/src/favicon.ico",
@@ -71,6 +68,9 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "testing": {
+              "aot": false
             }
           },
           "defaultConfiguration": ""
@@ -93,25 +93,20 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "projects/odata-v4-ng-app/src/test.ts",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
             "tsConfig": "projects/odata-v4-ng-app/tsconfig.spec.json",
-            "karmaConfig": "projects/odata-v4-ng-app/karma.conf.js",
-            "assets": [
-              "projects/odata-v4-ng-app/src/favicon.ico",
-              "projects/odata-v4-ng-app/src/assets"
-            ],
-            "styles": [
-              "projects/odata-v4-ng-app/src/styles.less"
-            ],
-            "scripts": [],
             "watch": false,
-            "codeCoverage": true
+            "coverage": true,
+            "reporters": [
+              "default"
+            ],
+            "coverageReporters": [
+              "html",
+              "text-summary"
+            ],
+            "buildTarget": ":build:testing",
+            "runner": "vitest"
           }
         },
         "lint": {
@@ -140,21 +135,34 @@
           "configurations": {
             "production": {
               "tsConfig": "projects/odata-v4-ng/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/odata-v4-ng/tsconfig.lib.json"
             }
           }
         },
-        "test": {
-          "builder": "@angular/build:karma",
+        "build-test": {
+          "builder": "@angular/build:application",
           "options": {
-            "main": "projects/odata-v4-ng/src/test.ts",
             "tsConfig": "projects/odata-v4-ng/tsconfig.spec.json",
-            "karmaConfig": "projects/odata-v4-ng/karma.conf.js",
+            "aot": false
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/odata-v4-ng/tsconfig.spec.json",
             "watch": false,
-            "codeCoverage": true,
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "coverage": true,
+            "reporters": [
+              "default"
+            ],
+            "coverageReporters": [
+              "html",
+              "text-summary"
+            ],
+            "runner": "vitest",
+            "buildTarget": "odata-v4-ng:build-test"
           }
         },
         "lint": {

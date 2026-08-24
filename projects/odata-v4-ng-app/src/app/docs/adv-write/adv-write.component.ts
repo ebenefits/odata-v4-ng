@@ -1,21 +1,20 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {ODataQuery, ODataResponse, ODataService} from 'odata-v4-ng';
 import {BasicWriteComponent} from '../basic-write/basic-write.component';
 import {ExampleData, SERVICE_ROOT} from '../example/example-data';
 
 const EXECUTE_BATCH = `example.subscr = example.odataQuery.execute().subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
 );`;
 
 @Component({
     selector: 'ov4-adv-write',
     templateUrl: '../example/example.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class AdvWriteComponent extends BasicWriteComponent implements OnInit {
@@ -53,10 +52,10 @@ ${EXECUTE_BATCH}`;
   executeBatch(example: ExampleData): void {
     example.subscr = example.odataQuery.execute().subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }

@@ -32,17 +32,17 @@
             role="tab"
             class="tab"
             [id]="'tab-' + i"
-            [class.active]="selectedTab === i"
-            [attr.aria-selected]="selectedTab === i"
+            [class.active]="selectedTab() === i"
+            [attr.aria-selected]="selectedTab() === i"
             [attr.aria-controls]="'tabpanel-' + i"
-            (click)="selectedTab = i">{{tab}}</button>
+            (click)="selectedTab.set(i)">{{tab}}</button>
   }
 </div>
 <div class="tab-panel"
      role="tabpanel"
-     [id]="'tabpanel-' + selectedTab"
-     [attr.aria-labelledby]="'tab-' + selectedTab">
-  @switch (selectedTab) {
+     [id]="'tabpanel-' + selectedTab()"
+     [attr.aria-labelledby]="'tab-' + selectedTab()">
+  @switch (selectedTab()) {
     @case (0) {
       <ov4-basic-read></ov4-basic-read>
     }

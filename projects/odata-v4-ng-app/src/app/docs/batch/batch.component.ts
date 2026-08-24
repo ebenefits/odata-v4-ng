@@ -1,22 +1,22 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {ODataQuery, ODataQueryBatch, ODataResponse, ODataService} from 'odata-v4-ng';
 import {Observable} from 'rxjs';
 
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 
 export class BatchItem {
+  readonly responseBatch = signal<ODataResponse | null>(null);
+  readonly responses = signal<ODataResponse[]>([]);
+
   constructor(
     public requestDescription: string,
-    public observable: Observable<ODataResponse>,
-    public responseBatch: ODataResponse,
-    public responses: ODataResponse[]) {
+    public observable: Observable<ODataResponse>) {
   }
 }
 
 @Component({
     selector: 'ov4-batch',
     templateUrl: './batch.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ReactiveFormsModule]
 })
 export class BatchComponent {
@@ -27,7 +27,7 @@ export class BatchComponent {
   entityIdControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entityPropertyPatchControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
   entityPropertyPutControl: FormControl<string> = new FormControl<string>('', {nonNullable: true});
-  batchData: BatchItem[] = [];
+  readonly batchData = signal<BatchItem[]>([]);
 
   executeAllQueries(): void {
     const batchData: BatchItem[] = [];
@@ -40,12 +40,12 @@ export class BatchComponent {
     let body2: any = {};
     body2[this.entityIdControl.value] = 'id2';
     odataQueryBatch.post(odataQuery, body1).post(odataQuery, body2);
-    batchData.push(new BatchItem('Add ' + this.entitySetControl.value, odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Add ' + this.entitySetControl.value, odataQueryBatch.execute()));
 
     // GET
     odataQueryBatch = new ODataQuery(this.odataService, this.serviceRootControl.value).batch();
     odataQueryBatch.get(odataQuery);
-    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute()));
 
     // PATCH
     odataQueryBatch = new ODataQuery(this.odataService, this.serviceRootControl.value).batch();
@@ -56,12 +56,12 @@ export class BatchComponent {
     body2 = {};
     body2[this.entityPropertyPatchControl.value] = 'patch2';
     odataQueryBatch.patch(odataQuery1, body1).patch(odataQuery2, body2);
-    batchData.push(new BatchItem('Update ' + this.entitySetControl.value + ' using PATCH', odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Update ' + this.entitySetControl.value + ' using PATCH', odataQueryBatch.execute()));
 
     // GET
     odataQueryBatch = new ODataQuery(this.odataService, this.serviceRootControl.value).batch();
     odataQueryBatch.get(odataQuery);
-    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute()));
 
     // PUT
     odataQueryBatch = new ODataQuery(this.odataService, this.serviceRootControl.value).batch();
@@ -70,22 +70,22 @@ export class BatchComponent {
     body2 = {};
     body2[this.entityPropertyPutControl.value] = 'put2';
     odataQueryBatch.put(odataQuery1, body1).put(odataQuery2, body2);
-    batchData.push(new BatchItem('Update ' + this.entitySetControl.value + ' using PUT', odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Update ' + this.entitySetControl.value + ' using PUT', odataQueryBatch.execute()));
 
     // GET
     odataQueryBatch = new ODataQuery(this.odataService, this.serviceRootControl.value).batch();
     odataQueryBatch.get(odataQuery);
-    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute()));
 
     // DELETE
     odataQueryBatch = new ODataQuery(this.odataService, this.serviceRootControl.value).batch();
     odataQueryBatch.delete(odataQuery1).delete(odataQuery2);
-    batchData.push(new BatchItem('Delete ' + this.entitySetControl.value, odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Delete ' + this.entitySetControl.value, odataQueryBatch.execute()));
 
     // GET
     odataQueryBatch = new ODataQuery(this.odataService, this.serviceRootControl.value).batch();
     odataQueryBatch.get(odataQuery);
-    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute(), null, null));
+    batchData.push(new BatchItem('Get ' + this.entitySetControl.value, odataQueryBatch.execute()));
 
     this.execute(0, batchData);
   }
@@ -95,11 +95,11 @@ export class BatchComponent {
 
     batchItem.observable.subscribe(
       (odataResponse: ODataResponse) => {
-        batchItem.responseBatch = odataResponse;
-        batchItem.responses = odataResponse.toODataResponseBatch().getODataResponses();
+        batchItem.responseBatch.set(odataResponse);
+        batchItem.responses.set(odataResponse.toODataResponseBatch().getODataResponses());
 
         if (index === batchData.length - 1) {
-          this.batchData = batchData;
+          this.batchData.set(batchData);
         } else {
           this.execute(++index, batchData);
         }

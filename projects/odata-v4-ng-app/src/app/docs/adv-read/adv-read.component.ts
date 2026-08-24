@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {ODataQuery, ODataService} from 'odata-v4-ng';
 import {BasicReadComponent, EXECUTE_GET} from '../basic-read/basic-read.component';
 import {ExampleData, SERVICE_ROOT} from '../example/example-data';
@@ -6,7 +6,6 @@ import {ExampleData, SERVICE_ROOT} from '../example/example-data';
 @Component({
     selector: 'ov4-adv-read',
     templateUrl: '../example/example.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class AdvReadComponent extends BasicReadComponent implements OnInit {

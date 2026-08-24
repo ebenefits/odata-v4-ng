@@ -1,21 +1,20 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {ODataQuery, ODataService} from 'odata-v4-ng';
 import {ExampleData, SERVICE_ROOT} from '../example/example-data';
 import {ExampleComponent} from '../example/example.component';
 
 export const EXECUTE_GET = `example.odataQuery.get().subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
 );`;
 
 @Component({
     selector: 'ov4-basic-read',
     templateUrl: '../example/example.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class BasicReadComponent extends ExampleComponent implements OnInit {

@@ -25,12 +25,6 @@ module.exports = defineConfig([
     extends: [angular.configs.tsRecommended],
     processor: angular.processInlineTemplates,
     rules: {
-      // Angular 22 made OnPush the default and the v22 migration added an explicit
-      // `ChangeDetectionStrategy.Eager` to every component to preserve the previous
-      // behaviour. These components assign their results inside HTTP subscribe
-      // callbacks without marking themselves dirty, so they genuinely need Eager
-      // until they are reworked (signals, or an explicit markForCheck).
-      '@angular-eslint/prefer-on-push-component-change-detection': 'off',
       '@angular-eslint/component-selector': [
         'error',
         {
