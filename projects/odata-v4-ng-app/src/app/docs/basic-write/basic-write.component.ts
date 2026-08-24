@@ -22,26 +22,26 @@ const EXECUTE_CREATE_ENTITY = `example.subscr = example.odataQuery.post({
     }]
 }).subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
   );`;
 const EXECUTE_DELETE_ENTITY = `example.subscr = example.odataQuery.delete().subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
 );`;
 const EXECUTE_DELETE_ENTITY_ETAG = `example.subscr = example.odataQuery.delete('W/"08D15F3DD9A61539"').subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
 );`;
 const EXECUTE_UPDATE_ENTITY = `example.subscr = example.odataQuery.patch({
@@ -49,10 +49,10 @@ const EXECUTE_UPDATE_ENTITY = `example.subscr = example.odataQuery.patch({
   'Emails': ['Russell@example.com', 'Russell@contoso.com', 'newRussell@contoso.com']
 }).subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
   );`;
 const EXECUTE_UPDATE_ENTITY_ETAG = `example.subscr = example.odataQuery.patch({
@@ -60,30 +60,30 @@ const EXECUTE_UPDATE_ENTITY_ETAG = `example.subscr = example.odataQuery.patch({
   'FirstName' : 'CLYDE'
 }, 'W/"08D15F3DD9126D84"').subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
   );`;
 const EXECUTE_CREATE_RELATIONSHIP = `example.subscr = example.odataQuery.post({
   '@odata.id': new ODataQuery(odataService, SERVICE_ROOT).entitySet('People').entityKey('\\\'vincentcalabrese\\\'').toString()
 }).subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
   );`;
 const EXECUTE_CHANGE_RELATIONSHIP = `example.subscr = example.odataQuery.put({
   '@odata.id': new ODataQuery(odataService, SERVICE_ROOT).entitySet('Airlines').entityKey('\\\'FM\\\'').toString()
 }).subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
   );`;
 const EXECUTE_BOUND_ACTION = `example.subscr = example.odataQuery.post({
@@ -91,10 +91,10 @@ const EXECUTE_BOUND_ACTION = `example.subscr = example.odataQuery.post({
     'tripId': 1001
   }).subscribe(
     (odataResponse: ODataResponse) => {
-      example.response = odataResponse.toString();
+      example.response.set(odataResponse.toString());
     },
     (error: string) => {
-      example.response = error;
+      example.response.set(error);
     }
     );`;
 
@@ -257,10 +257,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
         }]
     }).subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
@@ -268,10 +268,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
   executeDeleteEntity(example: ExampleData): void {
     example.subscr = example.odataQuery.delete().subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
@@ -279,10 +279,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
   executeDeleteEntityETag(example: ExampleData): void {
     example.subscr = example.odataQuery.delete('W/"08D15F3DD9A61539"').subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
@@ -293,10 +293,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
       Emails: ['Russell@example.com', 'Russell@contoso.com', 'newRussell@contoso.com']
     }).subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
@@ -307,10 +307,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
       FirstName: 'CLYDE'
     }, 'W/"08D15F3DD9126D84"').subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
@@ -320,10 +320,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
       '@odata.id': new ODataQuery(this.odataService, SERVICE_ROOT).entitySet('People').entityKey('\'vincentcalabrese\'').toString()
     }).subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
@@ -333,10 +333,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
       '@odata.id': new ODataQuery(this.odataService, SERVICE_ROOT).entitySet('Airlines').entityKey('\'FM\'').toString()
     }).subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
@@ -347,10 +347,10 @@ export class BasicWriteComponent extends ExampleComponent implements OnInit {
       tripId: 1001
     }).subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }

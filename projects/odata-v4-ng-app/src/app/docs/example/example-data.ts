@@ -1,5 +1,5 @@
+import {signal} from '@angular/core';
 import {Subscription} from 'rxjs';
-import {ODataService} from 'odata-v4-ng';
 
 export const SERVICE_ROOT = 'https://services.odata.org/v4/TripPinServiceRW';
 
@@ -8,7 +8,7 @@ export class ExampleData {
     public query: string;
     public odataQuery: any;
     public code: string;
-    public response: string;
+    public readonly response = signal('');
     public func: (example: ExampleData) => void;
     public subscr: Subscription;
 }

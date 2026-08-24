@@ -5,10 +5,10 @@ import {ExampleData, SERVICE_ROOT} from '../example/example-data';
 
 export const EXECUTE_GET_TO_METADATA = `example.odataQuery.get().subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = JSON.stringify(odataResponse.toMetadata(), null, 4);
+    example.response.set(JSON.stringify(odataResponse.toMetadata(), null, 4));
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
 );`;
 
@@ -58,10 +58,10 @@ ${EXECUTE_GET_TO_METADATA}`;
   executeGetToMetadata(example: ExampleData): void {
     example.subscr = example.odataQuery.get().subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = JSON.stringify(odataResponse.toMetadata(), null, 4);
+        example.response.set(JSON.stringify(odataResponse.toMetadata(), null, 4));
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }

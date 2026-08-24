@@ -5,10 +5,10 @@ import {ExampleComponent} from '../example/example.component';
 
 export const EXECUTE_GET = `example.odataQuery.get().subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
 );`;
 

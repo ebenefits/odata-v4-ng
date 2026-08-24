@@ -5,10 +5,10 @@ import {ExampleData, SERVICE_ROOT} from '../example/example-data';
 
 const EXECUTE_BATCH = `example.subscr = example.odataQuery.execute().subscribe(
   (odataResponse: ODataResponse) => {
-    example.response = odataResponse.toString();
+    example.response.set(odataResponse.toString());
   },
   (error: string) => {
-    example.response = error;
+    example.response.set(error);
   }
 );`;
 
@@ -52,10 +52,10 @@ ${EXECUTE_BATCH}`;
   executeBatch(example: ExampleData): void {
     example.subscr = example.odataQuery.execute().subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }

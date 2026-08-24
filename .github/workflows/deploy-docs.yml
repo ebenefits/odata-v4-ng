@@ -33,13 +33,23 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      # Builds the library first: the demo app resolves 'odata-v4-ng' to dist/
+      # via the tsConfig paths mapping. Both steps also lint and unit test.
+      - name: Build
+        run: npm run buildAll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: './docs/browser'
+          path: './dist/odata-v4-ng-app/browser'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

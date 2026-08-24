@@ -31,10 +31,10 @@ export class ExampleComponent implements OnDestroy {
   executeGet(example: ExampleData): void {
     example.subscr = example.odataQuery.get().subscribe(
       (odataResponse: ODataResponse) => {
-        example.response = odataResponse.toString();
+        example.response.set(odataResponse.toString());
       },
       (error: string) => {
-        example.response = error;
+        example.response.set(error);
       }
     );
   }
